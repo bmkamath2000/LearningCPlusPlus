@@ -1,0 +1,797 @@
+-error absl/strings/string_view.h' file not found
+
+-add abseil as dependency
+
+error: #error "This package requires GCC 7 or higher."
+ #error "This package requires GCC 7 or higher."
+
+-plan is to reinstall mingw32-gcc of higher version
+
+-from https://github.com/niXman/mingw-builds-binaries/releases downloaded x86_64-14.2.0-release-win32-seh-ucrt-rt_v12-rev0.7z
+
+-extracted mingw64 folder into C:\MinGW\mingw64
+
+Commands Used:
+gcc --version
+output of this should be higher than 7
+cmake -Dprotobuf_BUILD_TESTS=OFF -G "MinGW Makefiles" ..
+cmake --build .
+
+C:\Users\kamat\Downloads\protobuf\build>cmake --build .
+[  0%] Building CXX object third_party/abseil-cpp/absl/base/CMakeFiles/spinlock_wait.dir/internal/spinlock_wait.cc.obj
+[  0%] Linking CXX static library libabsl_spinlock_wait.a
+[  0%] Built target spinlock_wait
+[  0%] Building CXX object third_party/abseil-cpp/absl/base/CMakeFiles/log_severity.dir/log_severity.cc.obj
+[  0%] Linking CXX static library libabsl_log_severity.a
+[  0%] Built target log_severity
+[  0%] Building CXX object third_party/abseil-cpp/absl/base/CMakeFiles/raw_logging_internal.dir/internal/raw_logging.cc.obj
+[  1%] Linking CXX static library libabsl_raw_logging_internal.a
+[  1%] Built target raw_logging_internal
+[  1%] Building CXX object third_party/abseil-cpp/absl/base/CMakeFiles/base.dir/internal/cycleclock.cc.obj
+[  1%] Building CXX object third_party/abseil-cpp/absl/base/CMakeFiles/base.dir/internal/spinlock.cc.obj
+[  1%] Building CXX object third_party/abseil-cpp/absl/base/CMakeFiles/base.dir/internal/sysinfo.cc.obj
+C:\Users\kamat\Downloads\protobuf\third_party\abseil-cpp\absl\base\internal\sysinfo.cc:89: warning: ignoring '#pragma comment ' [-Wunknown-pragmas]
+   89 | #pragma comment(lib, "kernel32.lib")
+C:\Users\kamat\Downloads\protobuf\third_party\abseil-cpp\absl\base\internal\sysinfo.cc:161: warning: ignoring '#pragma comment ' [-Wunknown-pragmas]
+  161 | #pragma comment(lib, "advapi32.lib")  // For Reg* functions.
+[  1%] Building CXX object third_party/abseil-cpp/absl/base/CMakeFiles/base.dir/internal/thread_identity.cc.obj
+[  1%] Building CXX object third_party/abseil-cpp/absl/base/CMakeFiles/base.dir/internal/unscaledcycleclock.cc.obj
+[  2%] Linking CXX static library libabsl_base.a
+[  2%] Built target base
+[  2%] Building CXX object third_party/abseil-cpp/absl/base/CMakeFiles/throw_delegate.dir/internal/throw_delegate.cc.obj
+[  2%] Linking CXX static library libabsl_throw_delegate.a
+[  2%] Built target throw_delegate
+[  3%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/string_view.dir/string_view.cc.obj
+[  3%] Linking CXX static library libabsl_string_view.a
+[  3%] Built target string_view
+[  3%] Building CXX object third_party/abseil-cpp/absl/numeric/CMakeFiles/int128.dir/int128.cc.obj
+[  3%] Linking CXX static library libabsl_int128.a
+[  3%] Built target int128
+[  3%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/strings_internal.dir/internal/ostringstream.cc.obj
+[  3%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/strings_internal.dir/internal/utf8.cc.obj
+[  3%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/strings_internal.dir/internal/escaping.cc.obj
+In file included from C:\Users\kamat\Downloads\protobuf\third_party\abseil-cpp\absl\strings\internal\escaping.cc:18:
+C:\Users\kamat\Downloads\protobuf\third_party\abseil-cpp\absl\strings\internal\escaping.cc: In function 'size_t absl::lts_20240116::strings_internal::Base64EscapeInternal(const unsigned char*, size_t, char*, size_t, const char*, bool)':
+C:\Users\kamat\Downloads\protobuf\third_party\abseil-cpp\absl\strings\internal\escaping.cc:198:27: warning: unknown conversion type character 'z' in format [-Wformat=]
+  198 |       ABSL_RAW_LOG(FATAL, "Logic problem? szsrc = %zu", szsrc);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/kamat/Downloads/protobuf/third_party/abseil-cpp/absl/base/internal/raw_logging.h:50:38: note: in definition of macro 'ABSL_RAW_LOG'
+   50 |                                      __VA_ARGS__);                             \
+      |                                      ^~~~~~~~~~~
+C:\Users\kamat\Downloads\protobuf\third_party\abseil-cpp\absl\strings\internal\escaping.cc:198:52: note: format string is defined here
+  198 |       ABSL_RAW_LOG(FATAL, "Logic problem? szsrc = %zu", szsrc);
+      |                                                    ^
+C:\Users\kamat\Downloads\protobuf\third_party\abseil-cpp\absl\strings\internal\escaping.cc:198:27: warning: too many arguments for format [-Wformat-extra-args]
+  198 |       ABSL_RAW_LOG(FATAL, "Logic problem? szsrc = %zu", szsrc);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/kamat/Downloads/protobuf/third_party/abseil-cpp/absl/base/internal/raw_logging.h:50:38: note: in definition of macro 'ABSL_RAW_LOG'
+   50 |                                      __VA_ARGS__);                             \
+      |                                      ^~~~~~~~~~~
+[  3%] Linking CXX static library libabsl_strings_internal.a
+[  3%] Built target strings_internal
+[  3%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/strings.dir/ascii.cc.obj
+[  3%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/strings.dir/charconv.cc.obj
+[  3%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/strings.dir/escaping.cc.obj
+[  4%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/strings.dir/internal/charconv_bigint.cc.obj
+[  4%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/strings.dir/internal/charconv_parse.cc.obj
+[  4%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/strings.dir/internal/damerau_levenshtein_distance.cc.obj
+[  4%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/strings.dir/internal/memutil.cc.obj
+[  4%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/strings.dir/internal/stringify_sink.cc.obj
+[  4%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/strings.dir/match.cc.obj
+[  5%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/strings.dir/numbers.cc.obj
+[  5%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/strings.dir/str_cat.cc.obj
+[  5%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/strings.dir/str_replace.cc.obj
+[  5%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/strings.dir/str_split.cc.obj
+[  5%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/strings.dir/substitute.cc.obj
+[  6%] Linking CXX static library libabsl_strings.a
+[  6%] Built target strings
+[  6%] Building CXX object third_party/utf8_range/CMakeFiles/utf8_validity.dir/utf8_validity.cc.obj
+[  6%] Building C object third_party/utf8_range/CMakeFiles/utf8_validity.dir/utf8_range.c.obj
+[  6%] Linking CXX static library libutf8_validity.a
+[  6%] Built target utf8_validity
+[  6%] Building CXX object third_party/abseil-cpp/absl/base/CMakeFiles/malloc_internal.dir/internal/low_level_alloc.cc.obj
+[  6%] Linking CXX static library libabsl_malloc_internal.a
+[  6%] Built target malloc_internal
+[  6%] Building CXX object third_party/abseil-cpp/absl/base/CMakeFiles/strerror.dir/internal/strerror.cc.obj
+[  6%] Linking CXX static library libabsl_strerror.a
+[  6%] Built target strerror
+[  6%] Building CXX object third_party/abseil-cpp/absl/time/CMakeFiles/civil_time.dir/internal/cctz/src/civil_time_detail.cc.obj
+[  6%] Linking CXX static library libabsl_civil_time.a
+[  6%] Built target civil_time
+[  6%] Building CXX object third_party/abseil-cpp/absl/debugging/CMakeFiles/debugging_internal.dir/internal/address_is_readable.cc.obj
+[  6%] Building CXX object third_party/abseil-cpp/absl/debugging/CMakeFiles/debugging_internal.dir/internal/elf_mem_image.cc.obj
+[  7%] Building CXX object third_party/abseil-cpp/absl/debugging/CMakeFiles/debugging_internal.dir/internal/vdso_support.cc.obj
+[  7%] Linking CXX static library libabsl_debugging_internal.a
+[  7%] Built target debugging_internal
+[  7%] Building CXX object third_party/abseil-cpp/absl/debugging/CMakeFiles/demangle_internal.dir/internal/demangle.cc.obj
+[  7%] Linking CXX static library libabsl_demangle_internal.a
+[  7%] Built target demangle_internal
+[  8%] Building CXX object third_party/abseil-cpp/absl/debugging/CMakeFiles/stacktrace.dir/stacktrace.cc.obj
+In file included from C:\Users\kamat\Downloads\protobuf\third_party\abseil-cpp\absl\debugging\stacktrace.cc:46:
+C:/Users/kamat/Downloads/protobuf/third_party/abseil-cpp/absl/debugging/internal/stacktrace_win32-inl.inc:59:5: warning: cast between incompatible function types from 'FARPROC' {aka 'long long int (*)()'} to 'USHORT (*)(ULONG, ULONG, void**, PULONG)' {aka 'short unsigned int (*)(long unsigned int, long unsigned int, void**, long unsigned int*)'} [-Wcast-function-type]
+   59 |     (RtlCaptureStackBackTrace_Function*)GetProcAddress(
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   60 |         GetModuleHandleA("ntdll.dll"), "RtlCaptureStackBackTrace");
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  8%] Linking CXX static library libabsl_stacktrace.a
+[  8%] Built target stacktrace
+[  8%] Building CXX object third_party/abseil-cpp/absl/debugging/CMakeFiles/symbolize.dir/symbolize.cc.obj
+In file included from C:\Users\kamat\Downloads\protobuf\third_party\abseil-cpp\absl\debugging\symbolize.cc:36:
+C:/Users/kamat/Downloads/protobuf/third_party/abseil-cpp/absl/debugging/symbolize_win32.inc:21: warning: ignoring '#pragma warning ' [-Wunknown-pragmas]
+   21 | #pragma warning(push)
+C:/Users/kamat/Downloads/protobuf/third_party/abseil-cpp/absl/debugging/symbolize_win32.inc:22: warning: ignoring '#pragma warning ' [-Wunknown-pragmas]
+   22 | #pragma warning(disable:4091)
+C:/Users/kamat/Downloads/protobuf/third_party/abseil-cpp/absl/debugging/symbolize_win32.inc:24: warning: ignoring '#pragma warning ' [-Wunknown-pragmas]
+   24 | #pragma warning(pop)
+C:/Users/kamat/Downloads/protobuf/third_party/abseil-cpp/absl/debugging/symbolize_win32.inc:26: warning: ignoring '#pragma comment ' [-Wunknown-pragmas]
+   26 | #pragma comment(lib, "dbghelp.lib")
+[  9%] Linking CXX static library libabsl_symbolize.a
+[  9%] Built target symbolize
+[ 10%] Building CXX object third_party/abseil-cpp/absl/time/CMakeFiles/time_zone.dir/internal/cctz/src/time_zone_fixed.cc.obj
+[ 10%] Building CXX object third_party/abseil-cpp/absl/time/CMakeFiles/time_zone.dir/internal/cctz/src/time_zone_format.cc.obj
+C:\Users\kamat\Downloads\protobuf\third_party\abseil-cpp\absl\time\internal\cctz\src\time_zone_format.cc:43:6: warning: "HAS_STRPTIME" is not defined, evaluates to 0 [-Wundef]
+   43 | #if !HAS_STRPTIME
+      |      ^~~~~~~~~~~~
+C:\Users\kamat\Downloads\protobuf\third_party\abseil-cpp\absl\time\internal\cctz\src\time_zone_format.cc:59:6: warning: "HAS_STRPTIME" is not defined, evaluates to 0 [-Wundef]
+   59 | #if !HAS_STRPTIME
+      |      ^~~~~~~~~~~~
+[ 10%] Building CXX object third_party/abseil-cpp/absl/time/CMakeFiles/time_zone.dir/internal/cctz/src/time_zone_if.cc.obj
+[ 10%] Building CXX object third_party/abseil-cpp/absl/time/CMakeFiles/time_zone.dir/internal/cctz/src/time_zone_impl.cc.obj
+[ 10%] Building CXX object third_party/abseil-cpp/absl/time/CMakeFiles/time_zone.dir/internal/cctz/src/time_zone_info.cc.obj
+[ 11%] Building CXX object third_party/abseil-cpp/absl/time/CMakeFiles/time_zone.dir/internal/cctz/src/time_zone_libc.cc.obj
+[ 11%] Building CXX object third_party/abseil-cpp/absl/time/CMakeFiles/time_zone.dir/internal/cctz/src/time_zone_lookup.cc.obj
+[ 11%] Building CXX object third_party/abseil-cpp/absl/time/CMakeFiles/time_zone.dir/internal/cctz/src/time_zone_posix.cc.obj
+[ 11%] Building CXX object third_party/abseil-cpp/absl/time/CMakeFiles/time_zone.dir/internal/cctz/src/zone_info_source.cc.obj
+[ 11%] Linking CXX static library libabsl_time_zone.a
+[ 11%] Built target time_zone
+[ 12%] Building CXX object third_party/abseil-cpp/absl/time/CMakeFiles/time.dir/civil_time.cc.obj
+[ 12%] Building CXX object third_party/abseil-cpp/absl/time/CMakeFiles/time.dir/clock.cc.obj
+[ 12%] Building CXX object third_party/abseil-cpp/absl/time/CMakeFiles/time.dir/duration.cc.obj
+[ 12%] Building CXX object third_party/abseil-cpp/absl/time/CMakeFiles/time.dir/format.cc.obj
+[ 12%] Building CXX object third_party/abseil-cpp/absl/time/CMakeFiles/time.dir/time.cc.obj
+[ 12%] Linking CXX static library libabsl_time.a
+[ 12%] Built target time
+[ 12%] Building CXX object third_party/abseil-cpp/absl/synchronization/CMakeFiles/graphcycles_internal.dir/internal/graphcycles.cc.obj
+[ 12%] Linking CXX static library libabsl_graphcycles_internal.a
+[ 12%] Built target graphcycles_internal
+[ 12%] Building CXX object third_party/abseil-cpp/absl/synchronization/CMakeFiles/kernel_timeout_internal.dir/internal/kernel_timeout.cc.obj
+[ 13%] Linking CXX static library libabsl_kernel_timeout_internal.a
+[ 13%] Built target kernel_timeout_internal
+[ 13%] Building CXX object third_party/abseil-cpp/absl/synchronization/CMakeFiles/synchronization.dir/barrier.cc.obj
+[ 13%] Building CXX object third_party/abseil-cpp/absl/synchronization/CMakeFiles/synchronization.dir/blocking_counter.cc.obj
+[ 13%] Building CXX object third_party/abseil-cpp/absl/synchronization/CMakeFiles/synchronization.dir/internal/create_thread_identity.cc.obj
+[ 13%] Building CXX object third_party/abseil-cpp/absl/synchronization/CMakeFiles/synchronization.dir/internal/futex_waiter.cc.obj
+[ 14%] Building CXX object third_party/abseil-cpp/absl/synchronization/CMakeFiles/synchronization.dir/internal/per_thread_sem.cc.obj
+[ 14%] Building CXX object third_party/abseil-cpp/absl/synchronization/CMakeFiles/synchronization.dir/internal/pthread_waiter.cc.obj
+[ 14%] Building CXX object third_party/abseil-cpp/absl/synchronization/CMakeFiles/synchronization.dir/internal/sem_waiter.cc.obj
+[ 14%] Building CXX object third_party/abseil-cpp/absl/synchronization/CMakeFiles/synchronization.dir/internal/stdcpp_waiter.cc.obj
+[ 14%] Building CXX object third_party/abseil-cpp/absl/synchronization/CMakeFiles/synchronization.dir/internal/waiter_base.cc.obj
+[ 14%] Building CXX object third_party/abseil-cpp/absl/synchronization/CMakeFiles/synchronization.dir/internal/win32_waiter.cc.obj
+[ 15%] Building CXX object third_party/abseil-cpp/absl/synchronization/CMakeFiles/synchronization.dir/notification.cc.obj
+[ 15%] Building CXX object third_party/abseil-cpp/absl/synchronization/CMakeFiles/synchronization.dir/mutex.cc.obj
+In file included from C:/Users/kamat/Downloads/protobuf/third_party/abseil-cpp/absl/synchronization/internal/kernel_timeout.h:29,
+                 from C:/Users/kamat/Downloads/protobuf/third_party/abseil-cpp/absl/synchronization/mutex.h:75,
+                 from C:\Users\kamat\Downloads\protobuf\third_party\abseil-cpp\absl\synchronization\mutex.cc:15:
+C:\Users\kamat\Downloads\protobuf\third_party\abseil-cpp\absl\synchronization\mutex.cc: In function 'absl::lts_20240116::SynchEvent* absl::lts_20240116::EnsureSynchEvent(std::atomic<long long int>*, const char*, intptr_t, intptr_t)':
+C:\Users\kamat\Downloads\protobuf\third_party\abseil-cpp\absl\synchronization\mutex.cc:354:18: warning: unknown conversion type character 'z' in format [-Wformat=]
+  354 |                  "Accumulated %zu Mutex debug objects. If you see this"
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  355 |                  " in production, it may mean that the production code"
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  356 |                  " accidentally calls "
+      |                  ~~~~~~~~~~~~~~~~~~~~~~
+  357 |                  "Mutex/CondVar::EnableDebugLog/EnableInvariantDebugging.",
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/kamat/Downloads/protobuf/third_party/abseil-cpp/absl/base/internal/raw_logging.h:50:38: note: in definition of macro 'ABSL_RAW_LOG'
+   50 |                                      __VA_ARGS__);                             \
+      |                                      ^~~~~~~~~~~
+C:\Users\kamat\Downloads\protobuf\third_party\abseil-cpp\absl\synchronization\mutex.cc:354:32: note: format string is defined here
+  354 |                  "Accumulated %zu Mutex debug objects. If you see this"
+      |                                ^
+C:\Users\kamat\Downloads\protobuf\third_party\abseil-cpp\absl\synchronization\mutex.cc:354:18: warning: too many arguments for format [-Wformat-extra-args]
+  354 |                  "Accumulated %zu Mutex debug objects. If you see this"
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  355 |                  " in production, it may mean that the production code"
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  356 |                  " accidentally calls "
+      |                  ~~~~~~~~~~~~~~~~~~~~~~
+  357 |                  "Mutex/CondVar::EnableDebugLog/EnableInvariantDebugging.",
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/kamat/Downloads/protobuf/third_party/abseil-cpp/absl/base/internal/raw_logging.h:50:38: note: in definition of macro 'ABSL_RAW_LOG'
+   50 |                                      __VA_ARGS__);                             \
+      |                                      ^~~~~~~~~~~
+[ 15%] Linking CXX static library libabsl_synchronization.a
+[ 15%] Built target synchronization
+[ 15%] Building CXX object third_party/abseil-cpp/absl/profiling/CMakeFiles/exponential_biased.dir/internal/exponential_biased.cc.obj
+[ 15%] Linking CXX static library libabsl_exponential_biased.a
+[ 15%] Built target exponential_biased
+[ 15%] Building CXX object third_party/abseil-cpp/absl/container/CMakeFiles/hashtablez_sampler.dir/internal/hashtablez_sampler.cc.obj
+[ 16%] Building CXX object third_party/abseil-cpp/absl/container/CMakeFiles/hashtablez_sampler.dir/internal/hashtablez_sampler_force_weak_definition.cc.obj
+[ 16%] Linking CXX static library libabsl_hashtablez_sampler.a
+[ 16%] Built target hashtablez_sampler
+[ 16%] Building CXX object third_party/abseil-cpp/absl/types/CMakeFiles/bad_variant_access.dir/bad_variant_access.cc.obj
+[ 17%] Linking CXX static library libabsl_bad_variant_access.a
+[ 17%] Built target bad_variant_access
+[ 17%] Building CXX object third_party/abseil-cpp/absl/hash/CMakeFiles/city.dir/internal/city.cc.obj
+[ 17%] Linking CXX static library libabsl_city.a
+[ 17%] Built target city
+[ 18%] Building CXX object third_party/abseil-cpp/absl/hash/CMakeFiles/low_level_hash.dir/internal/low_level_hash.cc.obj
+[ 18%] Linking CXX static library libabsl_low_level_hash.a
+[ 18%] Built target low_level_hash
+[ 18%] Building CXX object third_party/abseil-cpp/absl/types/CMakeFiles/bad_optional_access.dir/bad_optional_access.cc.obj
+[ 18%] Linking CXX static library libabsl_bad_optional_access.a
+[ 18%] Built target bad_optional_access
+[ 18%] Building CXX object third_party/abseil-cpp/absl/hash/CMakeFiles/hash.dir/internal/hash.cc.obj
+[ 18%] Linking CXX static library libabsl_hash.a
+[ 18%] Built target hash
+[ 18%] Building CXX object third_party/abseil-cpp/absl/container/CMakeFiles/raw_hash_set.dir/internal/raw_hash_set.cc.obj
+[ 18%] Linking CXX static library libabsl_raw_hash_set.a
+[ 18%] Built target raw_hash_set
+[ 18%] Building CXX object third_party/abseil-cpp/absl/crc/CMakeFiles/crc_cpu_detect.dir/internal/cpu_detect.cc.obj
+[ 18%] Linking CXX static library libabsl_crc_cpu_detect.a
+[ 18%] Built target crc_cpu_detect
+[ 19%] Building CXX object third_party/abseil-cpp/absl/crc/CMakeFiles/crc_internal.dir/internal/crc.cc.obj
+[ 19%] Building CXX object third_party/abseil-cpp/absl/crc/CMakeFiles/crc_internal.dir/internal/crc_x86_arm_combined.cc.obj
+[ 19%] Linking CXX static library libabsl_crc_internal.a
+[ 19%] Built target crc_internal
+[ 19%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/str_format_internal.dir/internal/str_format/arg.cc.obj
+[ 19%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/str_format_internal.dir/internal/str_format/bind.cc.obj
+[ 19%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/str_format_internal.dir/internal/str_format/extension.cc.obj
+[ 20%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/str_format_internal.dir/internal/str_format/float_conversion.cc.obj
+[ 20%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/str_format_internal.dir/internal/str_format/output.cc.obj
+[ 20%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/str_format_internal.dir/internal/str_format/parser.cc.obj
+[ 20%] Linking CXX static library libabsl_str_format_internal.a
+[ 20%] Built target str_format_internal
+[ 20%] Building CXX object third_party/abseil-cpp/absl/crc/CMakeFiles/crc32c.dir/crc32c.cc.obj
+[ 20%] Building CXX object third_party/abseil-cpp/absl/crc/CMakeFiles/crc32c.dir/internal/crc_memcpy_fallback.cc.obj
+[ 20%] Building CXX object third_party/abseil-cpp/absl/crc/CMakeFiles/crc32c.dir/internal/crc_memcpy_x86_arm_combined.cc.obj
+[ 21%] Building CXX object third_party/abseil-cpp/absl/crc/CMakeFiles/crc32c.dir/internal/crc_non_temporal_memcpy.cc.obj
+[ 21%] Linking CXX static library libabsl_crc32c.a
+[ 21%] Built target crc32c
+[ 21%] Building CXX object third_party/abseil-cpp/absl/crc/CMakeFiles/crc_cord_state.dir/internal/crc_cord_state.cc.obj
+[ 21%] Linking CXX static library libabsl_crc_cord_state.a
+[ 21%] Built target crc_cord_state
+[ 21%] Building CXX object third_party/abseil-cpp/absl/debugging/CMakeFiles/leak_check.dir/leak_check.cc.obj
+[ 21%] Linking CXX static library libabsl_leak_check.a
+[ 21%] Built target leak_check
+[ 22%] Building CXX object third_party/abseil-cpp/absl/debugging/CMakeFiles/examine_stack.dir/internal/examine_stack.cc.obj
+[ 22%] Linking CXX static library libabsl_examine_stack.a
+[ 22%] Built target examine_stack
+[ 22%] Building CXX object third_party/abseil-cpp/absl/flags/CMakeFiles/flags_program_name.dir/internal/program_name.cc.obj
+[ 22%] Linking CXX static library libabsl_flags_program_name.a
+[ 22%] Built target flags_program_name
+[ 22%] Building CXX object third_party/abseil-cpp/absl/flags/CMakeFiles/flags_commandlineflag_internal.dir/internal/commandlineflag.cc.obj
+[ 22%] Linking CXX static library libabsl_flags_commandlineflag_internal.a
+[ 22%] Built target flags_commandlineflag_internal
+[ 22%] Building CXX object third_party/abseil-cpp/absl/flags/CMakeFiles/flags_commandlineflag.dir/commandlineflag.cc.obj
+[ 22%] Linking CXX static library libabsl_flags_commandlineflag.a
+[ 22%] Built target flags_commandlineflag
+[ 22%] Building CXX object third_party/abseil-cpp/absl/flags/CMakeFiles/flags_private_handle_accessor.dir/internal/private_handle_accessor.cc.obj
+[ 22%] Linking CXX static library libabsl_flags_private_handle_accessor.a
+[ 22%] Built target flags_private_handle_accessor
+[ 22%] Building CXX object third_party/abseil-cpp/absl/flags/CMakeFiles/flags_config.dir/usage_config.cc.obj
+[ 23%] Linking CXX static library libabsl_flags_config.a
+[ 23%] Built target flags_config
+[ 23%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/cordz_handle.dir/internal/cordz_handle.cc.obj
+[ 23%] Linking CXX static library libabsl_cordz_handle.a
+[ 23%] Built target cordz_handle
+[ 24%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/cordz_functions.dir/internal/cordz_functions.cc.obj
+[ 24%] Linking CXX static library libabsl_cordz_functions.a
+[ 24%] Built target cordz_functions
+[ 24%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/cord_internal.dir/internal/cord_internal.cc.obj
+[ 24%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/cord_internal.dir/internal/cord_rep_btree.cc.obj
+[ 25%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/cord_internal.dir/internal/cord_rep_btree_navigator.cc.obj
+[ 25%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/cord_internal.dir/internal/cord_rep_btree_reader.cc.obj
+[ 25%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/cord_internal.dir/internal/cord_rep_crc.cc.obj
+[ 25%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/cord_internal.dir/internal/cord_rep_consume.cc.obj
+[ 25%] Linking CXX static library libabsl_cord_internal.a
+[ 25%] Built target cord_internal
+[ 25%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/cordz_info.dir/internal/cordz_info.cc.obj
+[ 25%] Linking CXX static library libabsl_cordz_info.a
+[ 25%] Built target cordz_info
+[ 26%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/cord.dir/cord.cc.obj
+[ 26%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/cord.dir/cord_analysis.cc.obj
+[ 26%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/cord.dir/cord_buffer.cc.obj
+[ 26%] Linking CXX static library libabsl_cord.a
+[ 26%] Built target cord
+[ 27%] Building CXX object third_party/abseil-cpp/absl/flags/CMakeFiles/flags_reflection.dir/reflection.cc.obj
+[ 27%] Linking CXX static library libabsl_flags_reflection.a
+[ 27%] Built target flags_reflection
+[ 27%] Building CXX object third_party/abseil-cpp/absl/flags/CMakeFiles/flags_marshalling.dir/marshalling.cc.obj
+[ 27%] Linking CXX static library libabsl_flags_marshalling.a
+[ 27%] Built target flags_marshalling
+[ 27%] Building CXX object third_party/abseil-cpp/absl/flags/CMakeFiles/flags_internal.dir/internal/flag.cc.obj
+[ 27%] Linking CXX static library libabsl_flags_internal.a
+[ 27%] Built target flags_internal
+[ 27%] Building CXX object third_party/abseil-cpp/absl/log/CMakeFiles/log_internal_globals.dir/internal/globals.cc.obj
+[ 27%] Linking CXX static library libabsl_log_internal_globals.a
+[ 27%] Built target log_internal_globals
+[ 28%] Building CXX object third_party/abseil-cpp/absl/log/CMakeFiles/log_internal_format.dir/internal/log_format.cc.obj
+[ 28%] Linking CXX static library libabsl_log_internal_format.a
+[ 28%] Built target log_internal_format
+[ 28%] Building CXX object third_party/abseil-cpp/absl/log/CMakeFiles/log_internal_proto.dir/internal/proto.cc.obj
+[ 29%] Linking CXX static library libabsl_log_internal_proto.a
+[ 29%] Built target log_internal_proto
+[ 29%] Building CXX object third_party/abseil-cpp/absl/log/CMakeFiles/log_internal_fnmatch.dir/internal/fnmatch.cc.obj
+[ 29%] Linking CXX static library libabsl_log_internal_fnmatch.a
+[ 29%] Built target log_internal_fnmatch
+[ 29%] Building CXX object third_party/abseil-cpp/absl/log/CMakeFiles/log_entry.dir/log_entry.cc.obj
+[ 29%] Linking CXX static library libabsl_log_entry.a
+[ 29%] Built target log_entry
+[ 29%] Building CXX object third_party/abseil-cpp/absl/log/CMakeFiles/vlog_config_internal.dir/internal/vlog_config.cc.obj
+[ 30%] Linking CXX static library libabsl_vlog_config_internal.a
+[ 30%] Built target vlog_config_internal
+[ 30%] Building CXX object third_party/abseil-cpp/absl/log/CMakeFiles/log_globals.dir/globals.cc.obj
+[ 30%] Linking CXX static library libabsl_log_globals.a
+[ 30%] Built target log_globals
+[ 30%] Building CXX object third_party/abseil-cpp/absl/log/CMakeFiles/log_sink.dir/log_sink.cc.obj
+[ 30%] Linking CXX static library libabsl_log_sink.a
+[ 30%] Built target log_sink
+[ 30%] Building CXX object third_party/abseil-cpp/absl/log/CMakeFiles/log_internal_log_sink_set.dir/internal/log_sink_set.cc.obj
+[ 31%] Linking CXX static library libabsl_log_internal_log_sink_set.a
+[ 31%] Built target log_internal_log_sink_set
+[ 31%] Building CXX object third_party/abseil-cpp/absl/log/CMakeFiles/log_internal_nullguard.dir/internal/nullguard.cc.obj
+[ 31%] Linking CXX static library libabsl_log_internal_nullguard.a
+[ 31%] Built target log_internal_nullguard
+[ 31%] Building CXX object third_party/abseil-cpp/absl/log/CMakeFiles/log_internal_message.dir/internal/log_message.cc.obj
+[ 31%] Linking CXX static library libabsl_log_internal_message.a
+[ 31%] Built target log_internal_message
+[ 32%] Building CXX object third_party/abseil-cpp/absl/log/CMakeFiles/log_internal_check_op.dir/internal/check_op.cc.obj
+[ 32%] Linking CXX static library libabsl_log_internal_check_op.a
+[ 32%] Built target log_internal_check_op
+[ 32%] Building CXX object third_party/abseil-cpp/absl/log/CMakeFiles/log_internal_conditions.dir/internal/conditions.cc.obj
+[ 32%] Linking CXX static library libabsl_log_internal_conditions.a
+[ 32%] Built target log_internal_conditions
+[ 32%] Building CXX object third_party/abseil-cpp/absl/log/CMakeFiles/die_if_null.dir/die_if_null.cc.obj
+[ 32%] Linking CXX static library libabsl_die_if_null.a
+[ 32%] Built target die_if_null
+[ 32%] Building CXX object third_party/abseil-cpp/absl/log/CMakeFiles/log_initialize.dir/initialize.cc.obj
+[ 32%] Linking CXX static library libabsl_log_initialize.a
+[ 32%] Built target log_initialize
+[ 32%] Building CXX object third_party/abseil-cpp/absl/random/CMakeFiles/random_distributions.dir/discrete_distribution.cc.obj
+[ 32%] Building CXX object third_party/abseil-cpp/absl/random/CMakeFiles/random_distributions.dir/gaussian_distribution.cc.obj
+[ 32%] Linking CXX static library libabsl_random_distributions.a
+[ 32%] Built target random_distributions
+[ 32%] Building CXX object third_party/abseil-cpp/absl/random/CMakeFiles/random_internal_seed_material.dir/internal/seed_material.cc.obj
+C:\Users\kamat\Downloads\protobuf\third_party\abseil-cpp\absl\random\internal\seed_material.cc:47: warning: ignoring '#pragma comment ' [-Wunknown-pragmas]
+   47 | #pragma comment(lib, "bcrypt.lib")
+[ 32%] Linking CXX static library libabsl_random_internal_seed_material.a
+[ 32%] Built target random_internal_seed_material
+[ 32%] Building CXX object third_party/abseil-cpp/absl/random/CMakeFiles/random_seed_gen_exception.dir/seed_gen_exception.cc.obj
+[ 33%] Linking CXX static library libabsl_random_seed_gen_exception.a
+[ 33%] Built target random_seed_gen_exception
+[ 33%] Building CXX object third_party/abseil-cpp/absl/random/CMakeFiles/random_internal_platform.dir/internal/randen_round_keys.cc.obj
+[ 33%] Linking CXX static library libabsl_random_internal_platform.a
+[ 33%] Built target random_internal_platform
+[ 33%] Building CXX object third_party/abseil-cpp/absl/random/CMakeFiles/random_internal_randen_hwaes_impl.dir/internal/randen_hwaes.cc.obj
+[ 33%] Linking CXX static library libabsl_random_internal_randen_hwaes_impl.a
+[ 33%] Built target random_internal_randen_hwaes_impl
+[ 33%] Building CXX object third_party/abseil-cpp/absl/random/CMakeFiles/random_internal_randen_hwaes.dir/internal/randen_detect.cc.obj
+[ 33%] Linking CXX static library libabsl_random_internal_randen_hwaes.a
+[ 33%] Built target random_internal_randen_hwaes
+[ 34%] Building CXX object third_party/abseil-cpp/absl/random/CMakeFiles/random_internal_randen_slow.dir/internal/randen_slow.cc.obj
+[ 34%] Linking CXX static library libabsl_random_internal_randen_slow.a
+[ 34%] Built target random_internal_randen_slow
+[ 35%] Building CXX object third_party/abseil-cpp/absl/random/CMakeFiles/random_internal_randen.dir/internal/randen.cc.obj
+[ 35%] Linking CXX static library libabsl_random_internal_randen.a
+[ 35%] Built target random_internal_randen
+[ 35%] Building CXX object third_party/abseil-cpp/absl/random/CMakeFiles/random_internal_pool_urbg.dir/internal/pool_urbg.cc.obj
+[ 35%] Linking CXX static library libabsl_random_internal_pool_urbg.a
+[ 35%] Built target random_internal_pool_urbg
+[ 35%] Building CXX object third_party/abseil-cpp/absl/random/CMakeFiles/random_seed_sequences.dir/seed_sequences.cc.obj
+[ 35%] Linking CXX static library libabsl_random_seed_sequences.a
+[ 35%] Built target random_seed_sequences
+[ 35%] Building CXX object third_party/abseil-cpp/absl/status/CMakeFiles/status.dir/internal/status_internal.cc.obj
+[ 35%] Building CXX object third_party/abseil-cpp/absl/status/CMakeFiles/status.dir/status.cc.obj
+[ 35%] Building CXX object third_party/abseil-cpp/absl/status/CMakeFiles/status.dir/status_payload_printer.cc.obj
+[ 35%] Linking CXX static library libabsl_status.a
+[ 35%] Built target status
+[ 36%] Building CXX object third_party/abseil-cpp/absl/status/CMakeFiles/statusor.dir/statusor.cc.obj
+[ 36%] Linking CXX static library libabsl_statusor.a
+[ 36%] Built target statusor
+[ 36%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/any_lite.cc.obj
+[ 36%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/arena.cc.obj
+[ 36%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/arena_align.cc.obj
+[ 37%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/arenastring.cc.obj
+[ 37%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/arenaz_sampler.cc.obj
+[ 37%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/extension_set.cc.obj
+[ 37%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/generated_enum_util.cc.obj
+[ 37%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/generated_message_tctable_lite.cc.obj
+C:\Users\kamat\Downloads\protobuf\src\google\protobuf\generated_message_tctable_lite.cc:806:36: warning: 'always_inline' function might not be inlinable unless also declared 'inline' [-Wattributes]
+  806 | PROTOBUF_ALWAYS_INLINE const char* TcParser::FastVarintS1(
+      |                                    ^~~~~~~~
+C:\Users\kamat\Downloads\protobuf\src\google\protobuf\generated_message_tctable_lite.cc:806:36: warning: 'always_inline' function might not be inlinable unless also declared 'inline' [-Wattributes]
+C:\Users\kamat\Downloads\protobuf\src\google\protobuf\generated_message_tctable_lite.cc:729:29: warning: 'always_inline' function might not be inlinable unless also declared 'inline' [-Wattributes]
+  729 | PROTOBUF_ALWAYS_INLINE bool EnumIsValidAux(int32_t val, uint16_t xform_val,
+      |                             ^~~~~~~~~~~~~~
+C:\Users\kamat\Downloads\protobuf\src\google\protobuf\generated_message_tctable_lite.cc:717:29: warning: 'always_inline' function might not be inlinable unless also declared 'inline' [-Wattributes]
+  717 | PROTOBUF_ALWAYS_INLINE void PrefetchEnumData(uint16_t xform_val,
+      |                             ^~~~~~~~~~~~~~~~
+[ 37%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/generated_message_util.cc.obj
+[ 38%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/implicit_weak_message.cc.obj
+[ 38%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/inlined_string_field.cc.obj
+[ 38%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/io/coded_stream.cc.obj
+[ 38%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/io/io_win32.cc.obj
+[ 38%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/io/zero_copy_stream.cc.obj
+[ 39%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/io/zero_copy_stream_impl.cc.obj
+[ 39%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.obj
+[ 39%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/map.cc.obj
+[ 39%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/message_lite.cc.obj
+[ 39%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/parse_context.cc.obj
+[ 39%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/port.cc.obj
+[ 40%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/raw_ptr.cc.obj
+[ 40%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/repeated_field.cc.obj
+[ 40%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/repeated_ptr_field.cc.obj
+[ 40%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/stubs/common.cc.obj
+[ 40%] Building CXX object CMakeFiles/libprotobuf-lite.dir/src/google/protobuf/wire_format_lite.cc.obj
+[ 41%] Linking CXX static library libprotobuf-lite.a
+[ 41%] Built target libprotobuf-lite
+[ 41%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/any.pb.cc.obj
+[ 41%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/api.pb.cc.obj
+[ 41%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/duration.pb.cc.obj
+[ 42%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/empty.pb.cc.obj
+[ 42%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/field_mask.pb.cc.obj
+[ 42%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/source_context.pb.cc.obj
+[ 42%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/struct.pb.cc.obj
+[ 42%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/timestamp.pb.cc.obj
+[ 43%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/type.pb.cc.obj
+[ 43%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/wrappers.pb.cc.obj
+[ 43%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/any.cc.obj
+[ 43%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/any_lite.cc.obj
+[ 43%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/arena.cc.obj
+[ 43%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/arena_align.cc.obj
+[ 44%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/arenastring.cc.obj
+[ 44%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/arenaz_sampler.cc.obj
+[ 44%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/compiler/importer.cc.obj
+[ 44%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/compiler/parser.cc.obj
+[ 44%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/cpp_features.pb.cc.obj
+[ 45%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor.cc.obj
+[ 45%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor.pb.cc.obj
+[ 45%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor_database.cc.obj
+[ 45%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/dynamic_message.cc.obj
+[ 45%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/extension_set.cc.obj
+[ 45%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/extension_set_heavy.cc.obj
+[ 46%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/feature_resolver.cc.obj
+[ 46%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_enum_util.cc.obj
+[ 46%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_bases.cc.obj
+[ 46%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_reflection.cc.obj
+[ 46%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_tctable_full.cc.obj
+[ 47%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_tctable_gen.cc.obj
+[ 47%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_tctable_lite.cc.obj
+C:\Users\kamat\Downloads\protobuf\src\google\protobuf\generated_message_tctable_lite.cc:806:36: warning: 'always_inline' function might not be inlinable unless also declared 'inline' [-Wattributes]
+  806 | PROTOBUF_ALWAYS_INLINE const char* TcParser::FastVarintS1(
+      |                                    ^~~~~~~~
+C:\Users\kamat\Downloads\protobuf\src\google\protobuf\generated_message_tctable_lite.cc:806:36: warning: 'always_inline' function might not be inlinable unless also declared 'inline' [-Wattributes]
+C:\Users\kamat\Downloads\protobuf\src\google\protobuf\generated_message_tctable_lite.cc:729:29: warning: 'always_inline' function might not be inlinable unless also declared 'inline' [-Wattributes]
+  729 | PROTOBUF_ALWAYS_INLINE bool EnumIsValidAux(int32_t val, uint16_t xform_val,
+      |                             ^~~~~~~~~~~~~~
+C:\Users\kamat\Downloads\protobuf\src\google\protobuf\generated_message_tctable_lite.cc:717:29: warning: 'always_inline' function might not be inlinable unless also declared 'inline' [-Wattributes]
+  717 | PROTOBUF_ALWAYS_INLINE void PrefetchEnumData(uint16_t xform_val,
+      |                             ^~~~~~~~~~~~~~~~
+[ 47%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_util.cc.obj
+[ 47%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/implicit_weak_message.cc.obj
+[ 47%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/inlined_string_field.cc.obj
+[ 47%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/io/coded_stream.cc.obj
+[ 48%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/io/gzip_stream.cc.obj
+[ 48%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/io/io_win32.cc.obj
+[ 48%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/io/printer.cc.obj
+[ 48%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/io/strtod.cc.obj
+[ 48%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/io/tokenizer.cc.obj
+[ 49%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_sink.cc.obj
+[ 49%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream.cc.obj
+[ 49%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream_impl.cc.obj
+[ 49%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.obj
+[ 49%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/json/internal/lexer.cc.obj
+[ 49%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/json/internal/message_path.cc.obj
+[ 50%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/json/internal/parser.cc.obj
+[ 50%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/json/internal/unparser.cc.obj
+[ 50%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/json/internal/untyped_message.cc.obj
+[ 50%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/json/internal/writer.cc.obj
+[ 50%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/json/internal/zero_copy_buffered_stream.cc.obj
+[ 50%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/json/json.cc.obj
+[ 51%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/map.cc.obj
+[ 51%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/map_field.cc.obj
+[ 51%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/message.cc.obj
+[ 51%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/message_lite.cc.obj
+[ 51%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/parse_context.cc.obj
+[ 52%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/port.cc.obj
+[ 52%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/raw_ptr.cc.obj
+[ 52%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/reflection_mode.cc.obj
+[ 52%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/reflection_ops.cc.obj
+[ 52%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/repeated_field.cc.obj
+[ 52%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/repeated_ptr_field.cc.obj
+[ 53%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/service.cc.obj
+[ 53%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/common.cc.obj
+[ 53%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/text_format.cc.obj
+[ 53%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/unknown_field_set.cc.obj
+[ 53%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/util/delimited_message_util.cc.obj
+[ 54%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/util/field_comparator.cc.obj
+[ 54%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/util/field_mask_util.cc.obj
+[ 54%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/util/message_differencer.cc.obj
+[ 54%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/util/time_util.cc.obj
+[ 54%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/util/type_resolver_util.cc.obj
+[ 54%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/wire_format.cc.obj
+[ 55%] Building CXX object CMakeFiles/libprotobuf.dir/src/google/protobuf/wire_format_lite.cc.obj
+[ 55%] Linking CXX static library libprotobuf.a
+[ 55%] Built target libprotobuf
+[ 55%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/code_generator.cc.obj
+[ 55%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/command_line_interface.cc.obj
+[ 55%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/enum.cc.obj
+[ 55%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/extension.cc.obj
+[ 55%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/field.cc.obj
+[ 56%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/field_generators/cord_field.cc.obj
+[ 56%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/field_generators/enum_field.cc.obj
+[ 56%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/field_generators/map_field.cc.obj
+[ 56%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/field_generators/message_field.cc.obj
+[ 56%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/field_generators/primitive_field.cc.obj
+[ 57%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/field_generators/string_field.cc.obj
+[ 57%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/field_generators/string_view_field.cc.obj
+[ 57%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/file.cc.obj
+[ 57%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/generator.cc.obj
+[ 57%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/helpers.cc.obj
+[ 57%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/ifndef_guard.cc.obj
+[ 58%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/message.cc.obj
+[ 58%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/namespace_printer.cc.obj
+[ 58%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/padding_optimizer.cc.obj
+[ 58%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/parse_function_generator.cc.obj
+[ 58%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/service.cc.obj
+[ 59%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/cpp/tracker.cc.obj
+[ 59%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/csharp/csharp_doc_comment.cc.obj
+[ 59%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/csharp/csharp_enum.cc.obj
+[ 59%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/csharp/csharp_enum_field.cc.obj
+[ 59%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/csharp/csharp_field_base.cc.obj
+[ 59%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/csharp/csharp_generator.cc.obj
+[ 60%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/csharp/csharp_helpers.cc.obj
+[ 60%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/csharp/csharp_map_field.cc.obj
+[ 60%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/csharp/csharp_message.cc.obj
+[ 60%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/csharp/csharp_message_field.cc.obj
+[ 60%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/csharp/csharp_primitive_field.cc.obj
+[ 61%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/csharp/csharp_reflection_class.cc.obj
+[ 61%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/csharp/csharp_repeated_enum_field.cc.obj
+[ 61%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/csharp/csharp_repeated_message_field.cc.obj
+[ 61%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/csharp/csharp_repeated_primitive_field.cc.obj
+[ 61%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/csharp/csharp_source_generator_base.cc.obj
+[ 61%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/csharp/csharp_wrapper_field.cc.obj
+[ 62%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/csharp/names.cc.obj
+[ 62%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/context.cc.obj
+[ 62%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/doc_comment.cc.obj
+[ 62%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/field_common.cc.obj
+[ 62%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/file.cc.obj
+[ 63%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/full/enum.cc.obj
+[ 63%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/full/enum_field.cc.obj
+[ 63%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/full/extension.cc.obj
+[ 63%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/full/generator_factory.cc.obj
+[ 63%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/full/make_field_gens.cc.obj
+[ 63%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/full/map_field.cc.obj
+[ 64%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/full/message.cc.obj
+[ 64%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/full/message_builder.cc.obj
+[ 64%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/full/message_field.cc.obj
+[ 64%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/full/primitive_field.cc.obj
+[ 64%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/full/service.cc.obj
+[ 65%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/full/string_field.cc.obj
+[ 65%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/generator.cc.obj
+[ 65%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/helpers.cc.obj
+[ 65%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/internal_helpers.cc.obj
+[ 65%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/java_features.pb.cc.obj
+[ 65%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/kotlin_generator.cc.obj
+[ 66%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/lite/enum.cc.obj
+[ 66%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/lite/enum_field.cc.obj
+[ 66%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/lite/extension.cc.obj
+[ 66%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/lite/generator_factory.cc.obj
+[ 66%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/lite/make_field_gens.cc.obj
+[ 67%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/lite/map_field.cc.obj
+[ 67%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/lite/message.cc.obj
+[ 67%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/lite/message_builder.cc.obj
+[ 67%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/lite/message_field.cc.obj
+[ 67%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/lite/primitive_field.cc.obj
+[ 67%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/lite/string_field.cc.obj
+[ 68%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/message_serialization.cc.obj
+[ 68%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/name_resolver.cc.obj
+[ 68%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/names.cc.obj
+[ 68%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/java/shared_code_generator.cc.obj
+[ 68%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/objectivec/enum.cc.obj
+[ 69%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/objectivec/enum_field.cc.obj
+[ 69%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/objectivec/extension.cc.obj
+[ 69%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/objectivec/field.cc.obj
+[ 69%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/objectivec/file.cc.obj
+[ 69%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/objectivec/generator.cc.obj
+[ 69%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/objectivec/helpers.cc.obj
+[ 70%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/objectivec/import_writer.cc.obj
+[ 70%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/objectivec/line_consumer.cc.obj
+[ 70%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/objectivec/map_field.cc.obj
+[ 70%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/objectivec/message.cc.obj
+[ 70%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/objectivec/message_field.cc.obj
+[ 70%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/objectivec/names.cc.obj
+[ 71%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/objectivec/oneof.cc.obj
+[ 71%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/objectivec/primitive_field.cc.obj
+[ 71%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/objectivec/tf_decode_data.cc.obj
+[ 71%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/php/names.cc.obj
+[ 71%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/php/php_generator.cc.obj
+[ 72%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/plugin.cc.obj
+[ 72%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/plugin.pb.cc.obj
+[ 72%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/python/generator.cc.obj
+[ 72%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/python/helpers.cc.obj
+[ 72%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/python/pyi_generator.cc.obj
+[ 72%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/retention.cc.obj
+[ 73%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/ruby/ruby_generator.cc.obj
+[ 73%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/accessors/accessor_case.cc.obj
+[ 73%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/accessors/accessors.cc.obj
+[ 73%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/accessors/default_value.cc.obj
+[ 73%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/accessors/map.cc.obj
+[ 74%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/accessors/repeated_field.cc.obj
+[ 74%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/accessors/singular_message.cc.obj
+[ 74%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/accessors/singular_scalar.cc.obj
+[ 74%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/accessors/singular_string.cc.obj
+[ 74%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/accessors/unsupported_field.cc.obj
+[ 74%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/context.cc.obj
+[ 75%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/crate_mapping.cc.obj
+[ 75%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/enum.cc.obj
+[ 75%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/generator.cc.obj
+[ 75%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/message.cc.obj
+[ 75%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/naming.cc.obj
+[ 76%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/oneof.cc.obj
+[ 76%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/relative_path.cc.obj
+[ 76%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/rust_field_type.cc.obj
+[ 76%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/rust/rust_keywords.cc.obj
+[ 76%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/subprocess.cc.obj
+[ 76%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/versions.cc.obj
+[ 77%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/compiler/zip_writer.cc.obj
+[ 77%] Building CXX object CMakeFiles/libprotoc.dir/src/google/protobuf/testing/file.cc.obj
+[ 77%] Building CXX object CMakeFiles/libprotoc.dir/upb_generator/mangle.cc.obj
+[ 77%] Linking CXX static library libprotoc.a
+[ 77%] Built target libprotoc
+[ 77%] Building C object third_party/utf8_range/CMakeFiles/utf8_range.dir/utf8_range.c.obj
+[ 78%] Linking C static library libutf8_range.a
+[ 78%] Built target utf8_range
+[ 78%] Building C object CMakeFiles/libupb.dir/upb/base/status.c.obj
+[ 79%] Building C object CMakeFiles/libupb.dir/upb/hash/common.c.obj
+[ 79%] Building C object CMakeFiles/libupb.dir/upb/json/decode.c.obj
+[ 79%] Building C object CMakeFiles/libupb.dir/upb/json/encode.c.obj
+[ 79%] Building C object CMakeFiles/libupb.dir/upb/lex/atoi.c.obj
+[ 79%] Building C object CMakeFiles/libupb.dir/upb/lex/round_trip.c.obj
+[ 79%] Building C object CMakeFiles/libupb.dir/upb/lex/strtod.c.obj
+[ 80%] Building C object CMakeFiles/libupb.dir/upb/lex/unicode.c.obj
+[ 80%] Building C object CMakeFiles/libupb.dir/upb/mem/alloc.c.obj
+[ 80%] Building C object CMakeFiles/libupb.dir/upb/mem/arena.c.obj
+[ 80%] Building C object CMakeFiles/libupb.dir/upb/message/accessors.c.obj
+[ 80%] Building C object CMakeFiles/libupb.dir/upb/message/array.c.obj
+[ 81%] Building C object CMakeFiles/libupb.dir/upb/message/compare.c.obj
+[ 81%] Building C object CMakeFiles/libupb.dir/upb/message/compat.c.obj
+[ 81%] Building C object CMakeFiles/libupb.dir/upb/message/copy.c.obj
+[ 81%] Building C object CMakeFiles/libupb.dir/upb/message/internal/compare_unknown.c.obj
+[ 81%] Building C object CMakeFiles/libupb.dir/upb/message/internal/extension.c.obj
+[ 81%] Building C object CMakeFiles/libupb.dir/upb/message/internal/iterator.c.obj
+[ 82%] Building C object CMakeFiles/libupb.dir/upb/message/internal/message.c.obj
+[ 82%] Building C object CMakeFiles/libupb.dir/upb/message/map.c.obj
+[ 82%] Building C object CMakeFiles/libupb.dir/upb/message/map_sorter.c.obj
+[ 82%] Building C object CMakeFiles/libupb.dir/upb/message/merge.c.obj
+[ 82%] Building C object CMakeFiles/libupb.dir/upb/message/message.c.obj
+[ 83%] Building C object CMakeFiles/libupb.dir/upb/mini_descriptor/build_enum.c.obj
+[ 83%] Building C object CMakeFiles/libupb.dir/upb/mini_descriptor/decode.c.obj
+[ 83%] Building C object CMakeFiles/libupb.dir/upb/mini_descriptor/internal/base92.c.obj
+[ 83%] Building C object CMakeFiles/libupb.dir/upb/mini_descriptor/internal/encode.c.obj
+[ 83%] Building C object CMakeFiles/libupb.dir/upb/mini_descriptor/link.c.obj
+[ 83%] Building C object CMakeFiles/libupb.dir/upb/mini_table/extension_registry.c.obj
+[ 84%] Building C object CMakeFiles/libupb.dir/upb/mini_table/internal/message.c.obj
+[ 84%] Building C object CMakeFiles/libupb.dir/upb/mini_table/message.c.obj
+[ 84%] Building C object CMakeFiles/libupb.dir/upb/reflection/def_pool.c.obj
+[ 84%] Building C object CMakeFiles/libupb.dir/upb/reflection/def_type.c.obj
+[ 84%] Building C object CMakeFiles/libupb.dir/upb/reflection/desc_state.c.obj
+[ 85%] Building C object CMakeFiles/libupb.dir/upb/reflection/enum_def.c.obj
+[ 85%] Building C object CMakeFiles/libupb.dir/upb/reflection/enum_reserved_range.c.obj
+[ 85%] Building C object CMakeFiles/libupb.dir/upb/reflection/enum_value_def.c.obj
+[ 85%] Building C object CMakeFiles/libupb.dir/upb/reflection/extension_range.c.obj
+[ 85%] Building C object CMakeFiles/libupb.dir/upb/reflection/field_def.c.obj
+[ 85%] Building C object CMakeFiles/libupb.dir/upb/reflection/file_def.c.obj
+[ 86%] Building C object CMakeFiles/libupb.dir/upb/reflection/internal/def_builder.c.obj
+[ 86%] Building C object CMakeFiles/libupb.dir/upb/reflection/internal/strdup2.c.obj
+[ 86%] Building C object CMakeFiles/libupb.dir/upb/reflection/message.c.obj
+[ 86%] Building C object CMakeFiles/libupb.dir/upb/reflection/message_def.c.obj
+[ 86%] Building C object CMakeFiles/libupb.dir/upb/reflection/message_reserved_range.c.obj
+[ 87%] Building C object CMakeFiles/libupb.dir/upb/reflection/method_def.c.obj
+[ 87%] Building C object CMakeFiles/libupb.dir/upb/reflection/oneof_def.c.obj
+[ 87%] Building C object CMakeFiles/libupb.dir/upb/reflection/service_def.c.obj
+[ 87%] Building C object CMakeFiles/libupb.dir/upb/text/encode.c.obj
+[ 87%] Building C object CMakeFiles/libupb.dir/upb/text/internal/encode.c.obj
+[ 87%] Building C object CMakeFiles/libupb.dir/upb/util/def_to_proto.c.obj
+[ 88%] Building C object CMakeFiles/libupb.dir/upb/util/required_fields.c.obj
+[ 88%] Building C object CMakeFiles/libupb.dir/upb/wire/decode.c.obj
+[ 88%] Building C object CMakeFiles/libupb.dir/upb/wire/encode.c.obj
+[ 88%] Building C object CMakeFiles/libupb.dir/upb/wire/eps_copy_input_stream.c.obj
+[ 88%] Building C object CMakeFiles/libupb.dir/upb/wire/internal/decode_fast.c.obj
+[ 89%] Building C object CMakeFiles/libupb.dir/upb/wire/reader.c.obj
+[ 89%] Building C object CMakeFiles/libupb.dir/upb/reflection/cmake/google/protobuf/descriptor.upb_minitable.c.obj
+[ 89%] Linking C static library libupb.a
+[ 89%] Built target libupb
+[ 89%] Building CXX object CMakeFiles/protoc-gen-upb.dir/upb_generator/common.cc.obj
+[ 89%] Building CXX object CMakeFiles/protoc-gen-upb.dir/upb_generator/file_layout.cc.obj
+[ 89%] Building CXX object CMakeFiles/protoc-gen-upb.dir/upb_generator/mangle.cc.obj
+[ 89%] Building CXX object CMakeFiles/protoc-gen-upb.dir/upb_generator/names.cc.obj
+[ 90%] Building CXX object CMakeFiles/protoc-gen-upb.dir/upb_generator/protoc-gen-upb.cc.obj
+[ 90%] Building C object CMakeFiles/protoc-gen-upb.dir/upb_generator/cmake/google/protobuf/compiler/plugin.upb_minitable.c.obj
+[ 90%] Linking CXX executable protoc-gen-upb.exe
+[ 90%] Built target protoc-gen-upb
+[ 91%] Building CXX object CMakeFiles/protoc-gen-upbdefs.dir/upb_generator/common.cc.obj
+[ 91%] Building CXX object CMakeFiles/protoc-gen-upbdefs.dir/upb_generator/file_layout.cc.obj
+[ 91%] Building CXX object CMakeFiles/protoc-gen-upbdefs.dir/upb_generator/mangle.cc.obj
+[ 91%] Building CXX object CMakeFiles/protoc-gen-upbdefs.dir/upb_generator/protoc-gen-upbdefs.cc.obj
+[ 91%] Building C object CMakeFiles/protoc-gen-upbdefs.dir/upb_generator/cmake/google/protobuf/compiler/plugin.upb_minitable.c.obj
+[ 92%] Linking CXX executable protoc-gen-upbdefs.exe
+[ 92%] Built target protoc-gen-upbdefs
+[ 92%] Building CXX object CMakeFiles/protoc-gen-upb_minitable.dir/upb_generator/common.cc.obj
+[ 92%] Building CXX object CMakeFiles/protoc-gen-upb_minitable.dir/upb_generator/file_layout.cc.obj
+[ 93%] Building CXX object CMakeFiles/protoc-gen-upb_minitable.dir/upb_generator/mangle.cc.obj
+[ 93%] Building CXX object CMakeFiles/protoc-gen-upb_minitable.dir/upb_generator/names.cc.obj
+[ 93%] Building CXX object CMakeFiles/protoc-gen-upb_minitable.dir/upb_generator/protoc-gen-upb_minitable-main.cc.obj
+[ 93%] Building CXX object CMakeFiles/protoc-gen-upb_minitable.dir/upb_generator/protoc-gen-upb_minitable.cc.obj
+[ 93%] Building C object CMakeFiles/protoc-gen-upb_minitable.dir/upb_generator/cmake/google/protobuf/compiler/plugin.upb_minitable.c.obj
+[ 93%] Linking CXX executable protoc-gen-upb_minitable.exe
+[ 93%] Built target protoc-gen-upb_minitable
+[ 94%] Building CXX object CMakeFiles/protoc.dir/src/google/protobuf/compiler/main.cc.obj
+[ 94%] Linking CXX executable protoc.exe
+[ 94%] Built target protoc
+[ 94%] Building CXX object third_party/abseil-cpp/absl/base/CMakeFiles/scoped_set_env.dir/internal/scoped_set_env.cc.obj
+[ 94%] Linking CXX static library libabsl_scoped_set_env.a
+[ 94%] Built target scoped_set_env
+[ 94%] Building CXX object third_party/abseil-cpp/absl/debugging/CMakeFiles/failure_signal_handler.dir/failure_signal_handler.cc.obj
+[ 95%] Linking CXX static library libabsl_failure_signal_handler.a
+[ 95%] Built target failure_signal_handler
+[ 95%] Building CXX object third_party/abseil-cpp/absl/flags/CMakeFiles/flags_usage_internal.dir/internal/usage.cc.obj
+[ 96%] Linking CXX static library libabsl_flags_usage_internal.a
+[ 96%] Built target flags_usage_internal
+[ 96%] Building CXX object third_party/abseil-cpp/absl/flags/CMakeFiles/flags_usage.dir/usage.cc.obj
+[ 96%] Linking CXX static library libabsl_flags_usage.a
+[ 96%] Built target flags_usage
+[ 97%] Building CXX object third_party/abseil-cpp/absl/flags/CMakeFiles/flags_parse.dir/parse.cc.obj
+[ 97%] Linking CXX static library libabsl_flags_parse.a
+[ 97%] Built target flags_parse
+[ 97%] Building CXX object third_party/abseil-cpp/absl/log/CMakeFiles/log_flags.dir/flags.cc.obj
+[ 98%] Linking CXX static library libabsl_log_flags.a
+[ 98%] Built target log_flags
+[ 98%] Building CXX object third_party/abseil-cpp/absl/profiling/CMakeFiles/periodic_sampler.dir/internal/periodic_sampler.cc.obj
+[ 98%] Linking CXX static library libabsl_periodic_sampler.a
+[ 98%] Built target periodic_sampler
+[ 98%] Building CXX object third_party/abseil-cpp/absl/random/CMakeFiles/random_internal_distribution_test_util.dir/internal/chi_square.cc.obj
+[ 98%] Building CXX object third_party/abseil-cpp/absl/random/CMakeFiles/random_internal_distribution_test_util.dir/internal/distribution_test_util.cc.obj
+[ 99%] Linking CXX static library libabsl_random_internal_distribution_test_util.a
+[ 99%] Built target random_internal_distribution_test_util
+[100%] Building CXX object third_party/abseil-cpp/absl/strings/CMakeFiles/cordz_sample_token.dir/internal/cordz_sample_token.cc.obj
+[100%] Linking CXX static library libabsl_cordz_sample_token.a
+[100%] Built target cordz_sample_token
+[100%] Building CXX object third_party/abseil-cpp/absl/types/CMakeFiles/bad_any_cast_impl.dir/bad_any_cast.cc.obj
+[100%] Linking CXX static library libabsl_bad_any_cast_impl.a
+[100%] Built target bad_any_cast_impl
+
+After protobuf is built
+copy into dependencies folder.
+finally refer to these in the CMakeLists.txt
+then
+
+ Cannot specify include directories for target "protobuf_cpp_mukbo_writer"
+  which is not built by this project.
+C:\Program Files (x86)\protobuf\lib\cmake
+absl/abslConfig.cmake
+absl/abslConfigVersion.cmake
+absl/abslTargets.cmake
+absl/abslTargets-noconfig.cmake
+
+protobuf/protobuf-config.cmake
+protobuf/protobuf-config-version.cmake
+protobuf/protobuf-generate.cmake
+protobuf/protobuf-module.cmake
+protobuf/protobuf-options.cmake
+protobuf/protobuf-targets.cmake
+protobuf/protobuf-targets-noconfig.cmake
+
+utf8_range/utf8_range-config.cmake
+utf8_range/utf8_range-targets.cmake
+utf8_range/utf8_range-targets-noconfig.cmake
+
+
+cmake --build . --config Release --target install
+
+
+C:\Path\to\build\protobuf> cmake -S.. -B. \
+                           -DCMAKE_CXX_STANDARD=11 \
+                           -Dprotobuf_ABSL_PROVIDER=package \
+                           -DCMAKE_PREFIX_PATH=/tmp/absl  # Path to where I installed Abseil

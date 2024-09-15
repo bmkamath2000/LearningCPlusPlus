@@ -1,0 +1,16 @@
+g++ -I..\libs -L..\libs simple.cpp -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32 -llibbgi
+
+
+g++ -I..\libs\glfw\include -L..\libs\glfw\lib-vc2022 createWindowGLFW.cpp -lglfw3
+
+
+g++ createWindowGLFW.cpp -I..\libs\glad\include I..\libs\glfw\include ../libs/glad/src/glad.c -lglfw -ldl
+
+
+g++ createWindowGLFW.cpp -I..\libs\glad\include ..\libs\glfw\include ../libs/glad/src/glad.c -lglfw -ldl
+
+
+g++ createWindowGLFW.cpp -I..\libs\glad\include -I..\libs\glfw\include ../libs/glad/src/glad.c ..\libs\glfw\lib-vc2022\glfw3.lib
+
+
+cl createWindowGLFW.cpp -I..\libs\glad\include -I..\libs\glfw\include ../libs/glad/src/glad.c ..\libs\glfw\lib-vc2022\glfw3.lib /EHsc
