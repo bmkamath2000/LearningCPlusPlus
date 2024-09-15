@@ -14,3 +14,5 @@ g++ createWindowGLFW.cpp -I..\libs\glad\include -I..\libs\glfw\include ../libs/g
 
 
 cl createWindowGLFW.cpp -I..\libs\glad\include -I..\libs\glfw\include ../libs/glad/src/glad.c ..\libs\glfw\lib-vc2022\glfw3.lib /EHsc
+
+cl createWindowGLFW.cpp -I..\libs\glad\include -I..\libs\glfw\include ../libs/glad/src/glad.c ..\libs\glfw\lib-vc2022\glfw3dll.lib /EHsc
