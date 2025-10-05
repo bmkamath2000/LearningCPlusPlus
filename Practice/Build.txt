@@ -1,5 +1,7 @@
-g++ -I..\libs -L..\libs simple.cpp -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32 -llibbgi
+g++ simple.cpp -o form -I..\libs\sfml\SFML-3.0.2\include -L..\libs\sfml\SFML-3.0.2\lib -lsfml-graphics -lsfml-window -lsfml-system
 
+cl /EHsc /std:c++17 simple.cpp /I"..\libs\sfml\SFML-3.0.2\include" /Fe"my_game.exe" /link /LIBPATH:"..\libs\sfml\SFML-3.0.2\lib" libsfml-graphics-d.a libsfml-window-d.a libsfml-system-d.a
+cl /EHsc /std:c++17 simple.cpp /I"..\libs\sfml\SFML-3.0.2\include" /Fe"my_game.exe" /link /LIBPATH:"..\libs\sfml\SFML-3.0.2\lib" sfml-graphics-d.lib sfml-window-d.lib sfml-system-d.lib
 
 g++ -I..\libs\glfw\include -L..\libs\glfw\lib-vc2022 createWindowGLFW.cpp -lglfw3
 

@@ -1,102 +1,132 @@
-/* program to implement text box
-press esc key to terminate
-with comments
-*/
-#include <graphics.h>
+#include <SFML/Graphics.hpp>
+#include <string>
+#include <optional>
+#include <sstream>
+#include<iostream>
+// using namespace std;
+// A simple TextBox class to handle all text input functionality
+class TextBox {
+public:
+    TextBox(const sf::Font& font, int size, sf::Color color):
+        textbox(), background(), cursor() {
+        // Set up the text box
+        textbox.setFont(font);
+        textbox.setString("Hello");
+        textbox.setCharacterSize(size);
+        textbox.setFillColor(color);
+        textbox.setPosition(sf::Vector2f(100.f, 100.f));
 
-int poly[8];                      // a polygon to display the textbox
-int curposx = 100, curposy = 100; // current cursor position
-int flag;                         // flag to indicate blinking of cursor
-char str[20];                     // string containing typed text
-// Function to draw cursor while blinking it
-void drawcursor()
-{
-     if (flag == 0)
-          setcolor(WHITE);
-     else
-          setcolor(BLACK);
-     line(curposx, curposy, curposx, curposy + 20);
-}
-// Function to display key(character) typed
-void display(char key[2])
-{
+        // Set up the background rectangle
+        background.setSize({200.f, 30.f});
+        background.setPosition(sf::Vector2f(100.f, 100.f));
+        background.setFillColor(sf::Color(50, 50, 50));
+        
+        // Set up the blinking cursor
+        cursor.setSize({2.f, static_cast<float>(size)});
+        cursor.setFillColor(sf::Color::White);
+        cursor.setPosition(sf::Vector2f(textbox.getPosition().x, textbox.getPosition().y));
+    }
+    
+    // Process typed characters
+    void typedOn(char32_t unicode) {
+        if (isSelected) {
+            if (unicode < 128) {
+                if (unicode == 8) { // Handle backspace
+                    if (!text.str().empty()) {
+                        deleteLastChar();
+                    }
+                } else if (unicode == 13) { // Handle enter (optional)
+                    // Do something when enter is pressed
+                } else if (text.str().length() < 20) { // Limit input length
+                    inputLogic(unicode);
+                }
+            }
+        }
+    }
 
-     int len;
-     cleardevice();
-     setfillstyle(1, LIGHTGRAY);
-     setcolor(WHITE);
-     fillpoly(4, poly);
-     flag = (flag == 0) ? 1 : 0;
-     switch (key[0])
-     {
-     case 8: // if backspace is pressed delete the last character from str
-          len = strlen(str);
-          if (strlen != 0)
-          {
-               str[len - 1] = '\0';
-               curposx -= 7;
-          }
-          break;
-     case '\0': // if the key string is empty then do nothing
-          break;
-     default:
-          strcat(str, key);
-          curposx += 7;
-     }
+    // Set focus on the text box
+    void setSelected(bool sel) {
+        isSelected = sel;
+    }
 
-     outtextxy(100, 106, str);
-     drawcursor();
-}
-int main()
-{
-     char key[2];
-     int keycount = 0, enough = 0, len;
-     /* our polygon array */
+    // Draw the textbox and cursor to the window
+    void draw(sf::RenderWindow& window) {
+        window.draw(background);
+        window.draw(textbox);
+        if (isSelected) {
+            updateCursor();
+            if (showCursor) {
+                window.draw(cursor);
+            }
+        }
+    }
 
-     poly[0] = 100;
-     poly[1] = 100;
-     poly[2] = 200;
-     poly[3] = 100;
-     poly[4] = 200;
-     poly[5] = 130;
-     poly[6] = 100;
-     poly[7] = 130;
-     int gd = DETECT, gm;
-     char str[] ="C:\\TurboC++\\Disk\\TurboC3\\BGI";
-     //initgraph(&gd, &gm, str);
-     initwindow(400, 300, "Form");
-     key[0] = '\0';
-     flag = 0; // set the flag for cursor blinking
-     if (kbhit())
-          key[0] = getch(); // get the character typed if any before the loop starts
-     key[1] = '\0';
-     while (key[0] != 27) // if it is not escape be in loop
-     {
-          key[0] = '\0'; // destroy the key code from previous loop run
-          delay(200);    // delay for cursor blinking
-          if (kbhit())
-          {                       // if keyboard is hit
-               key[0] = getch();  // get the key code of pressed key
-               keycount++;        // increment the key count
-               if (keycount > 18) // If key count greater than 18 stop taking input
-                    enough = 1;
-          }
-          if (enough)
-               key[0] = '\0'; // if enough set key code to zero
-          display(key);
-     }
-     // set the last character as "\0" to terminate the str
-     len = strlen(str);
-     if (len > 0)
-     {
-          str[len - 1] = '\0';
-     }
-     setcolor(WHITE);
-     outtextxy(200, 200, str);
+private:
+    sf::Text textbox;
+    sf::RectangleShape background;
+    sf::RectangleShape cursor;
+    std::ostringstream text;
+    bool isSelected = false;
+    sf::Clock cursorClock;
+    bool showCursor = true;
 
-     printf("%d,%s", len, str);
+    void inputLogic(char32_t unicode) {
+        text << static_cast<char>(unicode);
+        textbox.setString(text.str());
+        // Move the cursor to the end of the text
+        cursor.setPosition(textbox.findCharacterPos(text.str().length()));
+        cursorClock.restart();
+    }
+    
+    void deleteLastChar() {
+        std::string currentText = text.str();
+        currentText.pop_back();
+        text.str(""); // Clear and reset
+        text << currentText;
+        textbox.setString(text.str());
+        // Move the cursor back
+        cursor.setPosition(textbox.findCharacterPos(text.str().length()));
+        cursorClock.restart();
+    }
+    
+    void updateCursor() {
+        if (cursorClock.getElapsedTime().asMilliseconds() > 500) {
+            showCursor = !showCursor;
+            cursorClock.restart();
+        }
+    }
+};
 
-     getch();
-     closegraph();
-     return 0;
+int main() {
+    sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML 3.0 Text Box");
+    sf::Font font;//("ARIAL.TTF");
+    std::cout << "Current path is " ;
+    std::cout<< std::filesystem::current_path() << std::endl;
+    const std::filesystem::path& filename = "ARIAL.TTF";
+    if (!font.openFromFile(filename)) {
+    std::cerr << "Failed to load font\n";
+    return 1;
+    }
+
+    TextBox input(font, 20, sf::Color::White);
+    input.setSelected(true); // Automatically select on launch
+
+    while (window.isOpen()) {
+        std::optional event = window.pollEvent();
+        if (event) {
+        // An event was retrieved, now process it
+            if (event->is<sf::Event::Closed>()) {
+                window.close();
+            } else if (const auto textEntered = event->getIf<sf::Event::TextEntered>()) {
+                input.typedOn(textEntered->unicode);
+            }
+            //event = window.pollEvent();
+        }
+
+        window.clear(sf::Color::Black);
+        input.draw(window);
+        window.display();
+    }
+
+    return 0;
 }
