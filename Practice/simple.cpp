@@ -98,6 +98,41 @@ private:
     }
 };
 
+// Add this class definition
+class Button {
+public:
+    Button(const sf::Font& font, const std::string& text, sf::Vector2f position) : text(font, text, 20U) {
+        // Setup visual elements
+        rect.setSize({150.f, 40.f});
+        rect.setFillColor(sf::Color(0, 100, 200)); // Blue
+        rect.setPosition(position);
+
+        // Center text on the rectangle (basic centering)
+        this->text.setFillColor(sf::Color::White);
+        this->text.setPosition(
+            sf::Vector2f(
+                position.x + (rect.getSize().x / 2.f) - (this->text.getLocalBounds().size.x / 2.f),
+                position.y + (rect.getSize().y / 2.f) - (this->text.getLocalBounds().size.y / 2.f) - 5.f
+            )
+        );
+    }
+
+    void draw(sf::RenderWindow& window) {
+        window.draw(rect);
+        window.draw(text);
+    }
+    
+    // Add logic to check if a mouse click is inside the button
+    bool isClicked(sf::Vector2i mousePos) const {
+        return rect.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos));
+    }
+
+private:
+    sf::RectangleShape rect;
+    sf::Text text;
+};
+
+
 int main() {
     sf::Font font;//("ARIAL.TTF");
     std::cout << "Current path is " ;
@@ -110,7 +145,7 @@ int main() {
     sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML 3.0 Text Box");
     TextBox input(font, 20, sf::Color::White);
     input.setSelected(true); // Automatically select on launch
-
+    Button submitButton(font, "Submit", sf::Vector2f(100.f, 150.f)); // Position below the textbox
     while (window.isOpen()) {
         std::optional event = window.pollEvent();
         if (event) {
@@ -120,11 +155,28 @@ int main() {
             } else if (const auto textEntered = event->getIf<sf::Event::TextEntered>()) {
                 input.typedOn(textEntered->unicode);
             }
-            //event = window.pollEvent();
+            else if (const auto mouseClick = event->getIf<sf::Event::MouseButtonPressed>()) {
+                if (mouseClick->button == sf::Mouse::Button::Left) {
+                    sf::Vector2i mousePos = {mouseClick->position.x, mouseClick->position.y};
+
+                    if (submitButton.isClicked(mousePos)) {
+                        // Action to take when the button is pressed
+                        std::cout << "Button Pressed!\n";
+                        // Optionally deselect the textbox
+                        input.setSelected(false); 
+                    }
+                    
+                    // You can also add logic here to select/deselect the textbox
+                    // based on a click location.
+                }
+            } else if (const auto textEntered = event->getIf<sf::Event::TextEntered>()) {
+                input.typedOn(textEntered->unicode);
+            }
         }
 
         window.clear(sf::Color::Black);
         input.draw(window);
+        submitButton.draw(window);
         window.display();
     }
 
