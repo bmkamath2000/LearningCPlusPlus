@@ -8,7 +8,7 @@
 class TextBox {
 public:
     TextBox(const sf::Font& font, int size, sf::Color color):
-        textbox(), background(), cursor() {
+        textbox(font,"hello",30U), background(), cursor() {
         // Set up the text box
         textbox.setFont(font);
         textbox.setString("Hello");
