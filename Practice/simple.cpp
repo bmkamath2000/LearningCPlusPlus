@@ -3,6 +3,7 @@
 #include <optional>
 #include <sstream>
 #include<iostream>
+#include <filesystem>
 // using namespace std;
 // A simple TextBox class to handle all text input functionality
 class TextBox {
@@ -98,16 +99,15 @@ private:
 };
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML 3.0 Text Box");
     sf::Font font;//("ARIAL.TTF");
     std::cout << "Current path is " ;
     std::cout<< std::filesystem::current_path() << std::endl;
     const std::filesystem::path& filename = "ARIAL.TTF";
-    if (!font.openFromFile(filename)) {
-    std::cerr << "Failed to load font\n";
-    return 1;
+    if (!font.openFromFile(std::filesystem::current_path() / filename)) {
+        std::cout << "Failed to load font\n";
+        return 1;
     }
-
+    sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML 3.0 Text Box");
     TextBox input(font, 20, sf::Color::White);
     input.setSelected(true); // Automatically select on launch
 
